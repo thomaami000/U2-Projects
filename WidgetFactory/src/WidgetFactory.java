@@ -1,3 +1,9 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+
+
 public class WidgetFactory {
 
     /*
@@ -28,4 +34,46 @@ public class WidgetFactory {
      Profit: $760.00
 
      */
+
+/*
+1. get input - number of widgets ( pop up boxes )
+2. calculate num of days
+    - widgets 
+3. calculate cost of production
+4. calculate cost of widgets
+4. calculate profit
+5. add to panel - num of widgets, num of days, cost of production, cost of widgets
+ */
+
+
+    static double numOfWidgets = getInput("How many widgets were made?");
+    public static void main(String[] args) {
+        double numOfWidgets = getInput("How many widgets were made?");
+    }
+
+            public static double getInput(String prompt) {
+
+                return Double.parseDouble(JOptionPane.showInputDialog(prompt));
+    }
+
+            private static class Days implements ActionListener {
+
+                public void actionPerformed(ActionEvent actionEvent) {
+
+                    double hours = numOfWidgets / 10;
+                    double days = hours / 16;
+                    DecimalFormat round = new DecimalFormat("0.00");
+
+        }
+    }
+
+            private static class ProductionCost implements ActionListener {
+
+                public void actionPerformed(ActionEvent actionEvent) {
+
+                    
+                    double costOfProduction(double days) =
+
+                }
+            }
 }

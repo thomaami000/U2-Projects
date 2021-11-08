@@ -10,17 +10,10 @@ public class RPGCharacterGUI {
     static JTextField strengthInput;
     static JTextField dexterityInput;
     static JTextField spiritInput;
-    static JLabel strenLabel;
-    static JLabel dexterLabel;
-    static JLabel spiritLabel;
     static JLabel damageLabel;
     static JLabel armorLabel;
     static JLabel manCapLabel;
     static JLabel spellLabel;
-    static JLabel nameOutputLabel;
-    static JLabel strenOutputLabel;
-    static JLabel dexterOutputLabel;
-    static JLabel spiritOutputLabel;
     static JLabel damageOutputLabel;
     static JLabel armorOutputLabel;
     static JLabel manaCapOutputLabel;
@@ -56,9 +49,6 @@ public class RPGCharacterGUI {
         manaCap.addActionListener(new ManaCapacity());
         spellStrength.addActionListener(new SpellStrength());
 
-        strenLabel = new JLabel("0.00/10000");
-        dexterLabel = new JLabel("0.00/10000");
-        spiritLabel = new JLabel("0.00/10000");
         damageLabel = new JLabel("0.00/10000");
         armorLabel = new JLabel("0.00/10000");
         manCapLabel = new JLabel("0.00/10000");
@@ -82,12 +72,6 @@ public class RPGCharacterGUI {
         panel.add(manaCap);
         panel.add(spellStrength);
 
-        panel.add(strenOutputLabel = new JLabel("Strength: "));
-        panel.add(strenLabel);
-        panel.add(dexterOutputLabel = new JLabel("Dexterity: "));
-        panel.add(dexterLabel);
-        panel.add(spiritOutputLabel = new JLabel("Spirit: "));
-        panel.add(spiritLabel);
         panel.add(damageOutputLabel = new JLabel("Damage: "));
         panel.add(damageLabel);
         panel.add(armorOutputLabel = new JLabel("Armor: "));

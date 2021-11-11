@@ -107,6 +107,7 @@ public class RPGCharacterGUI {
             armorLabel.setText(String.valueOf(number1 * 100));
         }
     }
+
     private static class ManaCapacity implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent){

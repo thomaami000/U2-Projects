@@ -45,35 +45,62 @@ public class WidgetFactory {
 5. add to panel - num of widgets, num of days, cost of production, cost of widgets
  */
 
+    final static int WIDGETS_PER_HOUR = 10;
+    final static int NUM_SHIFTS = 2;
+    final static int SHIFT_HOURS = 8;
+    final static int NUM_WORKERS = 5;
+    final static double WAGE = 16.50;
+    final static double WIDGET_PRICE = 10.00;
+    static int numWidgets = 0;
 
-    static double numOfWidgets = getInput("How many widgets were made?");
     public static void main(String[] args) {
-        double numOfWidgets = getInput("How many widgets were made?");
+
+        input();
+        output();
+
+        System.out.println(numDays());
     }
 
-            public static double getInput(String prompt) {
+    public static void input(){
 
-                return Double.parseDouble(JOptionPane.showInputDialog(prompt));
+        numWidgets = Integer.parseInt(JOptionPane.showInputDialog("How many widgets do you need?"));
+
     }
 
-            private static class Days implements ActionListener {
-
-                public void actionPerformed(ActionEvent actionEvent) {
-
-                    double hours = numOfWidgets / 10;
-                    double days = hours / 16;
-                    DecimalFormat round = new DecimalFormat("0.00");
-
-        }
+    public static int widgetsPerDay(){
+        return NUM_SHIFTS * SHIFT_HOURS * WIDGETS_PER_HOUR;
     }
 
-            private static class ProductionCost implements ActionListener {
+    public static int numDays(){
 
-                public void actionPerformed(ActionEvent actionEvent) {
+        return (int)Math.ceil(numWidgets / (double)widgetsPerDay());
 
-                    
-                    double costOfProduction(double days) =
+    }
 
-                }
-            }
+    public static double cost(){
+
+        return numDays() * NUM_SHIFTS * SHIFT_HOURS * WAGE * NUM_WORKERS;
+    }
+
+    public static double profit(){
+
+        return numWidgets * WIDGET_PRICE - cost();
+    }
+
+    public static void output(){
+
+        String message = "";
+
+        message += "Number of Widgets: " + numWidgets;
+        message += "\nNumber of Days: " + numDays();
+        message += "\nCost of Widgets: " + (numWidgets * WIDGET_PRICE);
+        message += "\nCost of Prodcution: " + cost();
+        message += "\nProfit: " + profit();
+
+        JOptionPane.showMessageDialog(null, message );
+
+    }
+
+
+
 }
